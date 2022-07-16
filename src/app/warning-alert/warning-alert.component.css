@@ -1,0 +1,11 @@
+p {
+  border: 1px solid salmon;
+  background-color: peachpuff;
+  padding: 20px;
+  border-radius: 5px;
+  color: brown;
+}
+
+p:hover {
+  background-color: coral;
+}

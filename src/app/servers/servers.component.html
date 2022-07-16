@@ -1,0 +1,27 @@
+<label for="txtServerName">Sever name</label>
+<!-- <input id="txtServerName" type="text" class="form-control" (input)="onUpdateServername($event)" /> -->
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+<p>{{ serverName }}</p>
+
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="addServer()"
+>
+  Add Server
+</button>
+<p *ngIf="serverCreated">Server {{ serverName }} was created</p>
+<app-server></app-server>
+<app-server></app-server>
+
+<hr />
+<label for="">Username</label>
+<input type="text" class="form-control" [(ngModel)]="userName" />
+<p>{{ userName }}</p>
+<button
+  class="btn btn-primary"
+  (click)="resetUsername()"
+  [disabled]="!userName"
+>
+  Reset Username
+</button>

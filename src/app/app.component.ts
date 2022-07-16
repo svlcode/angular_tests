@@ -1,10 +1,20 @@
 import { Component } from '@angular/core';
+import { LoggingService } from './logging.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [LoggingService],
 })
 export class AppComponent {
-  title = 'my-app';
+
+  constructor(private loggingService: LoggingService) {
+  }
+
+  addUser(user: string) {
+    //..
+    this.loggingService.logMessage(`${user} added.`);
+  }
+
 }
